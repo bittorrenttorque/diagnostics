@@ -1,0 +1,17 @@
+.btn.uTorrent, pre.uTorrent {
+	background-color: rgba(119, 255, 119, 0.38);
+}
+
+.btn.BitTorrent, pre.BitTorrent {
+	background-color: rgb(245, 208, 245);
+}
+
+.btn.Torque, pre.Torque {
+	background-color: #C2C2C2;
+}
+
+.container>div {
+	width: 30%;
+	float: left;
+	padding: 0 5px;
+}

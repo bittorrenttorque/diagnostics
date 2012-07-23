@@ -18,16 +18,17 @@ function syntaxHighlight(json) {
 }
 
 jQuery(function() {
-    $('form').submit(function(event) {
-        event.preventDefault();
-        var product = $('input').val();
+    $('#uTorrent, #BitTorrent, #Torque').click(function(event) {
+        if($(this).hasClass('disabled')) return;
+        $(this).addClass('disabled');
+        var product = $(this).text();
         var btapp = new Btapp;
         btapp.connect({
             product: product,
             plugin: false
         });
         btapp.on('all', function() {
-            $('.container').append('<pre>' + syntaxHighlight(JSON.stringify(arguments, undefined, 4)) + '</pre>');
+            $('.container > .' + product).append('<pre class="' + product + '">' + syntaxHighlight(JSON.stringify(arguments, undefined, 4)) + '</pre>');
         });
     });
 });
