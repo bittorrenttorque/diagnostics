@@ -25,7 +25,8 @@ jQuery(function() {
         var btapp = new Btapp;
         btapp.connect({
             product: product,
-            plugin: false
+            plugin: false,
+            pairing_type: 'native'
         });
         btapp.on('all', function() {
             $('.container > .' + product).append('<pre class="' + product + '">' + syntaxHighlight(JSON.stringify(arguments, undefined, 4)) + '</pre>');
